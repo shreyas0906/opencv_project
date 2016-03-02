@@ -1,7 +1,7 @@
 import cv2
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 sunglasses_cascade = cv2.CascadeClassifier('cascade_sunglasses.xml')
-eye_cascade  cv2.CascadeClassifier('haarcascade_eye.xml')
+#eye_cascade  cv2.CascadeClassifier('haarcascade_eye.xml')
 
 cap = cv2.VideoCapture(0)
 
@@ -19,7 +19,7 @@ while True:
         print w,h
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        eyes = eye_cascade.detectMultiScale(roi_gray)
+        #eyes = eye_cascade.detectMultiScale(roi_gray)
         sunglasses = sunglasses_cascade.detectMultiScale(roi_gray)
         for (ex,ey,ew,eh) in sunglasses:
             cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
