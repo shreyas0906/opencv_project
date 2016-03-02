@@ -15,7 +15,6 @@ while True:
         print w,h
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        # eyes = eye_cascade.detectMultiScale(roi_gray)
         sunglasses = sunglasses_cascade.detectMultiScale(roi_gray)
         for (ex,ey,ew,eh) in sunglasses:
             cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
