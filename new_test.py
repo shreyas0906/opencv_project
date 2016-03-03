@@ -4,7 +4,7 @@ sunglasses_cascade = cv2.CascadeClassifier('cascade_sunglasses.xml')
 
 img = cv2.imread('IMG_5843.jpg',cv2.IMREAD_GRAYSCALE)
 cv2.imshow('Image',img)
-sunglasses = sunglasses_cascade.detectMultiscale(img)
+#sunglasses = sunglasses_cascade.detectMultiscale(img)
 # cv2.imshow('resized',resized)
 for (x,y,w,h) in sunglasses:
          cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),1)
